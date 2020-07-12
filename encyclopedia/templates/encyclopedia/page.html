@@ -1,5 +1,8 @@
-{% load static %}
 {% extends "encyclopedia/layout.html" %}
 {% block body %}
-  {{html}}
-{% end block %}
+<div class="jumbotron">
+  {{html|safe}}
+  <a href="#" class="btn btn-warning" role="button" style="float:right">Edit Page</a>
+</div>
+
+{% endblock %}
