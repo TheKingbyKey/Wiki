@@ -46,8 +46,8 @@
                   </div>
                   <div style="margin-top:5px" class="mobile">
                     <span><a href="{% url 'index' %}">Home</a></span>
-                    <span><a href="#">Create New Page</a></span>
-                    <span><a href="#">Random Page</a></span>
+                    <span><a href="{% url 'newPage' %}">Create New Page</a></span>
+                    <span><a href="{% url 'random' %}">Random Page</a></span>
                   </div>
                   {% block nav %}
                   {% endblock %}
