@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html"%}
+{%load static%}
+
+{%block title%}
+ wiki&searchResults
+{%endblock%}
+
+{%block nav%}
+{%endblock%}
+
+{%block body%}
+  <h1>Search Results for ""{{q}}""</h1>
+
+    <ul class="list-group list-group-flush">
+      {% for entry in entries%}
+        <li class="list-group-item"><a href="{%url 'page' entry %}">{{entry}}</a></li>
+      {% endfor %}
+    </ul>
+{%endblock%}

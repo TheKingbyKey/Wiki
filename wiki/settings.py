@@ -25,7 +25,7 @@ SECRET_KEY = '%710m*zic)#0u((qugw#1@e^ty!c)9j04956v@ly(_86n$rg)h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['57413c7a1526.ngrok.io','localhost']
+ALLOWED_HOSTS = ['00c4d3cc365f.ngrok.io','localhost']
 
 
 # Application definition
@@ -73,6 +73,7 @@ WSGI_APPLICATION = 'wiki.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 DATABASES = {
     'default': {

@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    background-color: #ffe8e8;
+    background-color: #f7f0f3;
 }
 
 code {
@@ -29,6 +29,7 @@ h1 {
 }
 .jumbotron{
   background-color: #fffdd9;
+  margin-bottom: 0px
 }
 
 textarea {
@@ -56,9 +57,22 @@ textarea {
   box-shadow: -2px 4px 7px #0400ff;
 }
 
+.mobile span,.desktop span{
+  margin: 5px;
+  border: 2px solid #262424;
+  border-radius: 10px;
+  padding: 1px;
+  background-color: #262424;
+}
+.mobile span a,.desktop span a{
+  color: #edfffe;
+}
+
+
+
 .sidebar {
-    background-color: #88e3dc;
-    min-height: 40vh;
+    background-color: #edfffe;
+    min-height: 20vh;
     padding: 20px;
     padding-right: 0px;
     padding-left: 10px;
@@ -73,11 +87,21 @@ textarea {
   .sidebar{
     min-height: 30px;
   }
+  .desktop{
+    display: none;
+  }
 }
-
+@media (max-width:767px) {
+  .desktop{
+    display: none;
+  }
+}
 @media (min-width:767px){
   .sidebar{
     height:100vh;
     box-shadow: .125rem 0px .25rem;
+  }
+  .mobile{
+    display: none;
   }
 }

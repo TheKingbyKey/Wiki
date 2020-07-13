@@ -1,5 +1,5 @@
 import re
-
+import random
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
@@ -35,3 +35,22 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+def search_entries(q):
+    """
+    return all the enteries with quesry as the substring.
+    return none if no such entries.
+    """
+    _, filenames = default_storage.listdir("entries")
+    entries =  list(sorted(re.sub(r"\.md$", "", filename)
+                for filename in filenames if filename.endswith(".md")))
+
+    matching_entries = list(sorted(filename for filename in entries if re.search(q,filename,re.IGNORECASE) ))
+    return matching_entries
+
+def random_entry():
+    entries = list_entries()
+    no = random.randint(0,len(entries)-1)
+    rlist = [entries[no],]
+    rlist.append(get_entry(entries[no]))
+    return rlist
